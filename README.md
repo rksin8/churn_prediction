@@ -1,5 +1,9 @@
 # Predicting Customer Churn for a Telecom Company
 
+
+![image info]("./interface.png")
+
+
 ## Problem Statement:
 
 A telecom company wants to predict whether a customer will churn (leave the service) based on their usage patterns and account information. The company would like to use this model to identify customers who are likely to churn and target them with retention offers.
