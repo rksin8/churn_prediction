@@ -1,7 +1,7 @@
 # Predicting Customer Churn for a Telecom Company
 
 
-![image info]("./interface.png")
+![image info](https://github.com/rksin8/churn_prediction/blob/main/interface.png)
 
 
 ## Problem Statement:
