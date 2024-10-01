@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .output {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .output p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Telecom Customer Churn Prediction</h1>
+    <form action="/predict" method="POST">
+        <div class="form-group">
+            <label for="tenure">Tenure (in months):</label>
+            <input type="number" id="tenure" name="tenure" required>
+        </div>
+        <div class="form-group">
+            <label for="monthlycharges">Monthly Charges:</label>
+            <input type="number" step="0.01" id="monthlycharges" name="monthlycharges" required>
+        </div>
+        <div class="form-group">
+            <label for="contract">Contract Type (0 = Month-to-month, 1 = One year, 2 = Two year):</label>
+            <input type="number" id="contract" name="contract" required>
+        </div>
+        <!-- Add other necessary input fields -->
+        <button type="submit" class="btn">Predict Churn</button>
+    </form>
+    
+    <div class="output">
+        <p>{{ prediction_text }}</p>
+        <p>{{ accuracy_text }}</p>
+    </div>
+</div>
+
+</body>
+</html>
