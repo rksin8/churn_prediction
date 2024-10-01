@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px; /* Increased width for more columns */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Six columns */
+    gap: 20px; /* Base gap between all columns */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="number"], select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Add extra margin for specific columns */
+div:nth-child(3),
+div:nth-child(4) {
+    margin-top: 20px; /* More space after column 2 */
+}
+
+div:nth-child(6),
+div:nth-child(7) {
+    margin-top: 20px; /* More space after column 4 */
+}
+
+div:nth-child(9),
+div:nth-child(10) {
+    margin-top: 20px; /* More space after column 6 */
+}
+
+input[type="submit"] {
+    grid-column: span 6; /* Adjusted to span six columns */
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.result {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    grid-column: span 6; /* Adjusted to span six columns */
+}
+
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    margin-top: 40px;
+}
