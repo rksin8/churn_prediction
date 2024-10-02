@@ -1,5 +1,6 @@
 # Predicting Customer Churn for a Telecom Company
 
+![image info](https://github.com/rksin8/churn_prediction/blob/main/churn_prediction.png)
 
 ![image info](https://github.com/rksin8/churn_prediction/blob/main/interface.png)
 
