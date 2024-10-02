@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import sys
 
-from models.preprocessing import preprocess_user_input
+from utils.preprocess import preprocess_user_input
 
 app = Flask(__name__)
 
@@ -19,9 +19,6 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Get user inputs from form
-    #data = [float(x) for x in request.form.values()]
-    #final_input = np.array([data])
 
     # Get form data
     user_input = request.form.to_dict()
@@ -29,19 +26,12 @@ def predict():
     # Convert form data to DataFrame
     data = pd.DataFrame([user_input])
 
-    print(data.info(), file=sys.stdout)
-
-    # save input to csv to test pre-processing steps - one time precesss comment it later
-    # data.to_csv("input.csv", index=False)
-
     # Preprocess user input
     processed_input = preprocess_user_input(data)
 
     ## Make prediction using the preprocessed input
     # Make a prediction
-    prediction = model.predict(processed_input.values)
-
-    print(prediction[0], file=sys.stdout)
+    prediction = model.predict(processed_input.values).tolist()
     
     # Get the model accuracy
     #accuracy = accuracy_rf * 100  # assuming accuracy_rf is the model's accuracy
